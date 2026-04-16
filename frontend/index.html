@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stadium Digital Twin</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.6.1/sockjs.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.3/stomp.min.js"></script>
+</head>
+<body>
+    <div class="dashboard-container">
+        <header>
+            <h1>Stadium Twin Live Board</h1>
+            <p>Real-time occupancy monitoring system</p>
+        </header>
+        
+        <main class="stadium-map">
+            <div class="zone" id="ZONE_ENTRANCE">
+                <div class="zone-name">North Gate</div>
+                <div class="zone-stats">
+                    <span class="count">0</span> / <span class="capacity">500</span>
+                </div>
+            </div>
+            
+            <div class="zone" id="ZONE_CONCOURSE">
+                <div class="zone-name">Main Concourse</div>
+                <div class="zone-stats">
+                    <span class="count">0</span> / <span class="capacity">1000</span>
+                </div>
+            </div>
+            
+            <div class="stands-container">
+                <div class="zone" id="ZONE_STAND_A">
+                    <div class="zone-name">East Stand A</div>
+                    <div class="zone-stats">
+                        <span class="count">0</span> / <span class="capacity">2000</span>
+                    </div>
+                </div>
+                
+                <div class="zone" id="ZONE_STAND_B">
+                    <div class="zone-name">West Stand B</div>
+                    <div class="zone-stats">
+                        <span class="count">0</span> / <span class="capacity">1500</span>
+                    </div>
+                </div>
+            </div>
+        </main>
+        
+        <div class="status-legend">
+             <div class="legend-item"><div class="dot green"></div> < 70% Safe</div>
+             <div class="legend-item"><div class="dot yellow"></div> > 70% Warning</div>
+             <div class="legend-item"><div class="dot red"></div> > 90% Critical</div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
